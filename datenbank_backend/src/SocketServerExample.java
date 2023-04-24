@@ -19,7 +19,7 @@ public class SocketServerExample {
     //socket server port on which it will listen
     private static int port = 9876;
 
-    public static void main(String args[]) throws IOException, ClassNotFoundException{
+    public static void startServer() throws IOException, ClassNotFoundException{
         //create the socket server object
         server = new ServerSocket(port);
         //keep listens indefinitely until receives 'exit' call or program terminates
