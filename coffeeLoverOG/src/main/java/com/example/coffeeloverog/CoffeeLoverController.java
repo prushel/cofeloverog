@@ -11,4 +11,8 @@ public class CoffeeLoverController {
     protected void onHelloButtonClick() {
         welcomeText.setText("Welcome to JavaFX Application!");
     }
+
+
+
+
 }
