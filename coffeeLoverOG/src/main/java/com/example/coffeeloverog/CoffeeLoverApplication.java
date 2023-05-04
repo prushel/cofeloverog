@@ -24,15 +24,8 @@ public class CoffeeLoverApplication extends Application {
 
         stage.setScene(scene);
         stage.show();
-<<<<<<< HEAD
         System.out.println("Program started...");
-=======
-        SocketClientExample client = new SocketClientExample();
-        client.StartClient();
 
-
-
->>>>>>> 3485d826c4ae9c14c8caf51c485ba45a881b748c
     }
 
     public static void main(String[] args) throws IOException, ClassNotFoundException, InterruptedException {
