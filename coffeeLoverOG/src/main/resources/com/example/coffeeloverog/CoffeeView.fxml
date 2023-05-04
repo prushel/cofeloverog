@@ -1,15 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.Insets?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.layout.VBox?>
-<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane id="anchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1">
     <children>
-
         <!--- Menu Top -->
         <MenuBar AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
             <menus>
@@ -37,8 +32,8 @@
         </MenuBar>
         <!-- Menu Top End -->
 
-        <Pane layoutY="25.0" prefHeight="376.0" prefWidth="158.0" style="-fx-border-color: gray;" AnchorPane.bottomAnchor="0.0" />
-        <Pane layoutX="157.0" layoutY="24.0" prefHeight="89.0" prefWidth="443.0" style="-fx-border-color: gray;" AnchorPane.leftAnchor="157.0" AnchorPane.rightAnchor="0.0">
+        <Pane id="pane_L" layoutY="25.0" prefHeight="376.0" prefWidth="158.0" style="-fx-border-color: gray;" AnchorPane.bottomAnchor="0.0" />
+        <Pane id="pane_up" layoutX="157.0" layoutY="24.0" prefHeight="89.0" prefWidth="443.0" style="-fx-border-color: gray;" AnchorPane.leftAnchor="157.0" AnchorPane.rightAnchor="0.0">
             <children>
                 <SplitMenuButton layoutX="30.0" layoutY="32.0" mnemonicParsing="false" text="SplitMenuButton">
                     <items>
@@ -46,7 +41,7 @@
                         <MenuItem mnemonicParsing="false" text="Action 2" />
                     </items>
                 </SplitMenuButton>
-                <SplitMenuButton layoutX="248.0" layoutY="32.0" mnemonicParsing="false" text="SplitMenuButton">
+                <SplitMenuButton fx:id="splittB" layoutX="248.0" layoutY="32.0" mnemonicParsing="false" text="SplitMenuButton">
                     <items>
                         <MenuItem mnemonicParsing="false" text="Action 1" />
                         <MenuItem mnemonicParsing="false" text="Action 2" />
