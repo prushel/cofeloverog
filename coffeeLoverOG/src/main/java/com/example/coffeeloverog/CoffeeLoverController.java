@@ -1,7 +1,7 @@
 package com.example.coffeeloverog;
 
 import javafx.fxml.FXML;
-import javafx.scene.control.Label;
+import javafx.scene.control.*;
 
 public class CoffeeLoverController {
     @FXML
