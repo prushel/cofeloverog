@@ -6,12 +6,14 @@ import javafx.scene.Scene;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
+import Client.SocketClientExample;
 
 import java.io.IOException;
+import java.net.Socket;
 
 public class CoffeeLoverApplication extends Application {
     @Override
-    public void start(Stage stage) throws IOException {
+    public void start(Stage stage) throws IOException, ClassNotFoundException, InterruptedException {
         FXMLLoader fxmlLoader = new FXMLLoader(CoffeeLoverApplication.class.getResource("CoffeeView.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
         stage.setTitle("Coffee Lover OG!");
@@ -22,10 +24,24 @@ public class CoffeeLoverApplication extends Application {
 
         stage.setScene(scene);
         stage.show();
+<<<<<<< HEAD
         System.out.println("Program started...");
+=======
+        SocketClientExample client = new SocketClientExample();
+        client.StartClient();
+
+
+
+>>>>>>> 3485d826c4ae9c14c8caf51c485ba45a881b748c
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException, ClassNotFoundException, InterruptedException {
+
         launch();
+
+
+
+
+
     }
 }
