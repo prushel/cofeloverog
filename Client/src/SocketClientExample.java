@@ -36,6 +36,11 @@ public class SocketClientExample {
             ois.close();
             oos.close();
             Thread.sleep(100);
+
+
+            System.out.println("Test - Verbindung zwischen Client uns Server");
+
+
         }
     }
 }
