@@ -23,6 +23,8 @@ public class SocketClientExample {
         ObjectInputStream ois = null;
         for(int i=0; i<5;i++){
             //establish socket connection to server
+
+
             this.socket = new Socket(host.getHostName(), 9876);
             //write to socket using ObjectOutputStream
             oos = new ObjectOutputStream(socket.getOutputStream());

@@ -8,9 +8,9 @@ import java.sql.ResultSet;
 import java.sql.DatabaseMetaData;
 public class Database {
 
-    private String host = "jdbc:postgresql://192.168.43.25:5432/cofedb";
-    private String user = null;
-    private String password = null;
+    private String host = "jdbc:postgresql://10.20.129.83:5432/cofedb";
+    private String user = "cofeadmin";
+    private String password = "cofe";
 
     private Connection conn = null;
 
