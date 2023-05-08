@@ -4,6 +4,8 @@ import javafx.scene.control.Button;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 
+import java.io.IOException;
+
 public class LoginController extends ClientController
 {
 
@@ -18,10 +20,11 @@ public class LoginController extends ClientController
 
 
     @FXML
-    protected void onLoginClick()
-    {
+    protected void onLoginClick() throws IOException, ClassNotFoundException {
+        var login = this.user.getText();
+        var pw = this.password.getText();
 
-
+        this.clientSeivce.sendMessage("verifyLogin");
 
     }
 
