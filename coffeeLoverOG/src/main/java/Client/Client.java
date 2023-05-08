@@ -4,19 +4,17 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.net.InetAddress;
 import java.net.Socket;
-import java.net.UnknownHostException;
 
 /**
  * This class implements java socket client
  * @author pankaj
  *
  */
-public class SocketClientExample {
+public class Client {
 
+    public  Socket socket1 = null;
 
-    private Socket socket = null;
-
-    public  void StartClient() throws UnknownHostException, IOException, ClassNotFoundException, InterruptedException{
+    public void StartClient() throws IOException, ClassNotFoundException, InterruptedException{
         //get the localhost IP address, if server is running on some other IP, you need to use that
         InetAddress host = InetAddress.getLocalHost();
         ObjectOutputStream oos = null;
@@ -25,14 +23,14 @@ public class SocketClientExample {
             //establish socket connection to server
 
 
-            this.socket = new Socket(host.getHostName(), 9876);
+            this.socket1 = new Socket(host.getHostName(), 9876);
             //write to socket using ObjectOutputStream
-            oos = new ObjectOutputStream(socket.getOutputStream());
+            oos = new ObjectOutputStream(socket1.getOutputStream());
             System.out.println("Sending request to Socket Server");
             if(i==4)oos.writeObject("exit");
             else oos.writeObject(""+i);
             //read the server response message
-            ois = new ObjectInputStream(socket.getInputStream());
+            ois = new ObjectInputStream(socket1.getInputStream());
             String message = (String) ois.readObject();
             System.out.println("Message: " + message);
             //close resources
@@ -40,5 +38,21 @@ public class SocketClientExample {
             oos.close();
             Thread.sleep(100);
         }
+
+
+
+
+
+    }
+
+    public String sendMessage(String message) throws IOException, ClassNotFoundException {
+
+        ObjectOutputStream oos = new ObjectOutputStream(socket1.getOutputStream());
+        oos.writeObject(message);
+        var ois = new ObjectInputStream(socket1.getInputStream());
+        String answer = (String) ois.readObject();
+        return answer;
+
+
     }
 }

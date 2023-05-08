@@ -33,12 +33,13 @@ public class SocketServerExample {
             System.out.println("Message Received: " + message);
             //create ObjectOutputStream object
             ObjectOutputStream oos = new ObjectOutputStream(socket.getOutputStream());
+
             //write object to Socket
             oos.writeObject("Hi Client "+message);
             //close resources
             ois.close();
             oos.close();
-            socket.close();
+
             //terminate the server if client sends exit request
             if(message.equalsIgnoreCase("exit")) break;
         }
