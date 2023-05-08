@@ -21,10 +21,11 @@ public class CoffeeLoverApplication extends Application {
         /*GridPane pane_L = new GridPane();
         StackPane pane = new StackPane();
         pane.getChildren().add(pane_L); */
-
         stage.setScene(scene);
         stage.show();
         System.out.println("Program started...");
+        SocketClientExample client = new SocketClientExample();
+        client.StartClient();
 
     }
 
