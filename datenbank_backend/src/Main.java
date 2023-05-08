@@ -1,4 +1,6 @@
+import Database.Database;
 import java.io.IOException;
+import Database.Database;
 
 
 public class Main
@@ -10,7 +12,8 @@ public class Main
     {
 
         Database db = new Database();
-        db.connect();
+
+        db.connect("cofeadmin", "cofe");
 
     }
 

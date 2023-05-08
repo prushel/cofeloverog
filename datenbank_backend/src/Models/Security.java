@@ -1,14 +1,22 @@
 package Models;
+import Database.Database;
 
 
 public class Security
 {
-    public boolean pgUser (String Username, String Password)
-    {
 
+    protected boolean verify (String Username, String Password, Database db ) {
 
-        return true;
+        if (db.connect(Username, Password)) {
 
+            return true;
+        }
+        else {
 
+            return false;
+
+        }
     }
+
+
 }
