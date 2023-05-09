@@ -12,7 +12,7 @@ import java.net.Socket;
  */
 public class Client {
 
-    public  Socket socket1 = null;
+    private  Socket socket1 = null;
 
     public void StartClient() throws IOException, ClassNotFoundException, InterruptedException{
         //get the localhost IP address, if server is running on some other IP, you need to use that
@@ -30,9 +30,6 @@ public class Client {
         String answer = (String) ois.readObject();
         ois.close();
         return answer;
-
-
-
 
     }
 }

@@ -4,8 +4,10 @@ import Database.Database;
 
 public class Security
 {
+    public static boolean verify (String Username, String Password)
+    {
 
-    protected boolean verify (String Username, String Password, Database db ) {
+        Database db = new Database();
 
         if (db.connect(Username, Password)) {
 

@@ -7,7 +7,7 @@ import java.sql.ResultSet;
 
 public class Database {
 
-    private String host = "jdbc:postgresql://10.20.129.83:5432/cofedb";
+    private String host = "jdbc:postgresql://katharina.camdvr.org:90/cofedb";
     private String user = null;
     private String password = null;
 
@@ -33,7 +33,7 @@ public class Database {
             while (rs.next())
             {
 
-                System.out.println(rs.getInt("employee_id"));
+                System.out.println(rs.getString("first_name"));
 
             }
 
@@ -53,5 +53,6 @@ public class Database {
 
     public void closeConnection() throws SQLException {
         conn.close();
+        System.out.println("Connection terminated");
     }
 }

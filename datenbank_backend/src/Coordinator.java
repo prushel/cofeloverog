@@ -1,14 +1,26 @@
-import Models.Employee;
+import Models.*;
+import Database.*;
 
-import java.io.ObjectOutputStream;
+import java.util.ArrayList;
+import java.util.List;
 
-public class Coordinator extends SocketServerExample
+public class Coordinator extends Server
 {
+
+    protected ArrayList<Employee> employees = new ArrayList<>();
+
 
     protected void createEmployee()
     {
         Employee employee = new Employee();
         employee.save();
+
+    }
+
+
+    protected boolean Login(String Username, String Password)
+    {
+        return Security.verify(Username, Password);
 
     }
 
