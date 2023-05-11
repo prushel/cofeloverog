@@ -1,21 +1,24 @@
-//Java SQL
+package Database;//Java SQL
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
-import java.sql.Statement;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import java.sql.DatabaseMetaData;
+
 public class Database {
 
-    private String host = "jdbc:postgresql://10.20.129.83:5432/cofedb";
-    private String user = "cofeadmin";
-    private String password = "cofe";
+    private String host = "jdbc:postgresql://katharina.camdvr.org:90/cofedb";
+    private String user = null;
+    private String password = null;
 
     private Connection conn = null;
 
-    public void connect()
+
+    public boolean connect(String User, String Password)
     {
+
+        this.user = User;
+        this.password = Password;
 
         try {
             Class.forName("org.postgresql.Driver");
@@ -30,9 +33,11 @@ public class Database {
             while (rs.next())
             {
 
-                System.out.println(rs.getInt("employee_id"));
+                System.out.println(rs.getString("first_name"));
 
             }
+
+            return true;
 
 
 
@@ -40,14 +45,14 @@ public class Database {
         } catch (Exception e) {
             e.printStackTrace();
             System.err.println(e.getClass ().getName ()+": "+e.getMessage ());
+
+            return false;
         }
+
     }
 
     public void closeConnection() throws SQLException {
         conn.close();
-
+        System.out.println("Connection terminated");
     }
-
-
-
 }

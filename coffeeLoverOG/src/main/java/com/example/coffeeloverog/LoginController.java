@@ -1,26 +1,37 @@
 package com.example.coffeeloverog;
-
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 
-public class LoginController
+import java.io.IOException;
+
+public class LoginController extends ClientController
 {
+
 
     @FXML
     private TextField user;
+    @FXML
     private PasswordField password;
 
+    @FXML
     private Button login;
 
 
-    protected void onLoginClick()
-    {
+    @FXML
+    protected void onLoginClick() throws IOException, ClassNotFoundException {
+        var login = this.user.getText();
+        var pw = this.password.getText();
 
-        login.setText("something happend");
+        this.clientSeivce.sendMessage("verifyLogin");
 
     }
+
+
+
+
+
 
 }
 

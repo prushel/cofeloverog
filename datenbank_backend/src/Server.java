@@ -11,7 +11,7 @@ import java.net.Socket;
  * @author pankaj
  *
  */
-public class SocketServerExample {
+public class Server {
 
     //static ServerSocket variable
     private static ServerSocket server;
@@ -33,17 +33,13 @@ public class SocketServerExample {
             System.out.println("Message Received: " + message);
             //create ObjectOutputStream object
             ObjectOutputStream oos = new ObjectOutputStream(socket.getOutputStream());
-            //write object to Socket
-            oos.writeObject("Hi Client "+message);
-            //close resources
-            ois.close();
-            oos.close();
-            socket.close();
+
+
+
             //terminate the server if client sends exit request
             if(message.equalsIgnoreCase("exit")) break;
         }
-        System.out.println("Shutting down Socket server!!");
-        //close the ServerSocket object
+       System.out.println("Done");
 
     }
 
