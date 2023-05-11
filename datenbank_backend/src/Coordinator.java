@@ -18,9 +18,9 @@ public class Coordinator extends Server
     }
 
 
-    protected boolean Login(String Username, String Password)
+    protected boolean Login(String[] creds)
     {
-        return Security.verify(Username, Password);
+        return Security.verify(creds[0], creds[1]);
 
     }
 

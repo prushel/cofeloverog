@@ -14,17 +14,8 @@ public class ClientController implements Initializable
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle)
     {
-        try {
-            this.clientSeivce = new Client();
-            clientSeivce.StartClient();
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        } catch (ClassNotFoundException e) {
-            throw new RuntimeException(e);
-        } catch (InterruptedException e) {
-            throw new RuntimeException(e);
-        }
-
+        this.clientSeivce = new Client();
+        clientSeivce.StartClient();
 
     }
 

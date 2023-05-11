@@ -13,7 +13,9 @@
             <Label text="Password" />
             <Button id="login" fx:id="login" mnemonicParsing="false" onAction="#onLoginClick" text="Anmelden" />
             <Label />
+            <Label fx:id="info" textFill="#ff2222" />
          </children>
       </VBox>
+      <Label layoutX="-132.0" layoutY="103.0" text="Label" />
    </children>
 </AnchorPane>

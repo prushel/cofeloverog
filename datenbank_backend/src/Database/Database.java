@@ -7,7 +7,7 @@ import java.sql.ResultSet;
 
 public class Database {
 
-    private String host = "jdbc:postgresql://katharina.camdvr.org:90/cofedb";
+    private String host = "jdbc:postgresql://katharina.camdvr.org:302/cofedb";
     private String user = null;
     private String password = null;
 
@@ -23,7 +23,7 @@ public class Database {
         try {
             Class.forName("org.postgresql.Driver");
             conn = DriverManager.getConnection(host, user, password);
-            System.out.println("Success!");
+            System.out.println("Connection success!");
             conn.setAutoCommit(true);
 
 
