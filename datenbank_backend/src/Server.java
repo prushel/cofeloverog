@@ -3,9 +3,11 @@ import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.lang.ClassNotFoundException;
+import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.net.ServerSocket;
 import java.net.Socket;
+import java.util.Arrays;
 
 /**
  * This class implements java Socket server
@@ -19,13 +21,13 @@ public class Server {
     //socket server port on which it will listen
     private static int port = 9876;
 
-    public static void main(String args[]) throws IOException, ClassNotFoundException, NoSuchMethodException {
+    public static void main(String args[]) throws IOException, ClassNotFoundException, NoSuchMethodException, InvocationTargetException, IllegalAccessException {
         //create the socket server object
         server = new ServerSocket(port);
         //keep listens indefinitely until receives 'exit' call or program terminates
         while(true){
             System.out.println("Waiting for the client request");
-            //creating socket and waiting for client connection
+            //creating socket and waiting for client conntion
 
             Socket socket = server.accept();
             //read from socket to ObjectInputStream object
@@ -35,17 +37,22 @@ public class Server {
 
             String[] message = (String[]) ois.readObject();
 
+            String[] argument = Arrays.copyOfRange(message,1, message.length);
+            System.out.println(argument[0]);
+            System.out.println((argument[1]));
+            Method command = Coordinator.class.getDeclaredMethod(message[0],argument.getClass());
+            System.out.println(command);
+            ObjectOutputStream oos = new ObjectOutputStream(socket.getOutputStream());
+            Object answer = command.invoke(null, new Object[] {argument});
+            oos.writeObject(answer);
 
-           /*
-            Method command = Coordinator.class.getDeclaredMethod(message[0],String[].class);
-            command.invoke(message[]);
 
-            */
+
 
             //terminate the server if client sends exit request
-            if(message.equalsIgnoreCase("exit")) break;
+
         }
-       System.out.println("Done");
+
 
     }
 

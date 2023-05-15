@@ -28,21 +28,26 @@ public class LoginController extends ClientController
 
         var login = this.user.getText();
         var pw = this.password.getText();
-        String[] creds = {login, pw};
-        System.out.println(login);
-        System.out.println(pw);
-        if(1 == 2) {
+        String[] creds = {"Login", login, pw};
 
-            System.out.println("Login successful");
+
+
+        String answer = clientService.sendMessage(creds).toString();
+
+        if(answer ==  "true") {
+
+            System.out.println("Logged in as" + login);
             GUIControl.loadNewScene("CoffeeView.fxml");
 
         }
-        else {
-
+        else if(answer == "false") {
+            System.out.println("Could not verify");
             info.setText("Could not verify user " + login);
 
 
         }
+
+
         }
 
 

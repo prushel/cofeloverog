@@ -9,13 +9,15 @@ import java.util.ResourceBundle;
 public class ClientController implements Initializable
 {
 
-    protected Client clientSeivce;
+    protected Client clientService;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle)
     {
-        this.clientSeivce = new Client();
-        clientSeivce.StartClient();
+        this.clientService = new Client();
+        clientService.StartClient();
+        System.out.println("Client started");
+
 
     }
 

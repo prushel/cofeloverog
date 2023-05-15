@@ -14,6 +14,7 @@ public class Main
     {
 
         Database db = new Database();
+        db.connect("cofeadmin", "cofe");
 
 
 

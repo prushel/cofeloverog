@@ -30,15 +30,15 @@ public class Client {
         }
 
 
+
     }
 
-    public String sendMessage(String[] args) throws IOException, ClassNotFoundException {
+    public Object sendMessage(String[] args) throws IOException, ClassNotFoundException {
 
         ObjectOutputStream oos = new ObjectOutputStream(socket1.getOutputStream());
         oos.writeObject(args);
         var ois = new ObjectInputStream(socket1.getInputStream());
-        String answer = (String) ois.readObject();
-        ois.close();
+        Object answer = ois.readObject();
         return answer;
 
     }

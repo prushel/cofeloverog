@@ -1,4 +1,6 @@
 package Database;//Java SQL
+import org.postgresql.util.PSQLException;
+
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
@@ -42,11 +44,13 @@ public class Database {
 
 
 
-        } catch (Exception e) {
-            e.printStackTrace();
-            System.err.println(e.getClass ().getName ()+": "+e.getMessage ());
+        } catch (PSQLException e) {
 
             return false;
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        } catch (ClassNotFoundException e) {
+            throw new RuntimeException(e);
         }
 
     }

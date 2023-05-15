@@ -17,6 +17,10 @@ public class GUIControl extends CoffeeLoverApplication
         System.out.println("View" + resource + " loaded");
 
     }
+    public static void newWindow(String resource)
+    {
+        
+    }
 
 
 }

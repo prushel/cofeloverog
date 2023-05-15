@@ -8,18 +8,9 @@ public class Security
     {
 
         Database db = new Database();
-
-        if (db.connect(Username, Password)) {
-
-            return true;
-        }
+        return db.connect(Username, Password);
 
 
-        else {
-
-            return false;
-
-        }
     }
 
 
