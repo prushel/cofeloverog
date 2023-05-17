@@ -13,7 +13,7 @@ public class CoffeeLoverApplication extends Application {
     protected static Stage stage;
     @Override
     public void start(Stage primaryStage) throws IOException, ClassNotFoundException, InterruptedException {
-        FXMLLoader fxmlLoader = new FXMLLoader(CoffeeLoverApplication.class.getResource("Login.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(CoffeeLoverApplication.class.getResource("CoffeeView.fxml"));
         this.stage = primaryStage;
         Scene scene = new Scene(fxmlLoader.load());
         stage.setTitle("Coffee Lover OG!");
