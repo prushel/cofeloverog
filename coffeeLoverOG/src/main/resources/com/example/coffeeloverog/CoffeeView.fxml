@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
+
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane id="anchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="393.0" prefWidth="678.0" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane id="anchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="393.0" prefWidth="678.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.coffeeloverog.CoffeeLoverController">
 
     <children>
         <!--- Menu Top -->
@@ -14,9 +15,9 @@
                         <MenuItem mnemonicParsing="false" text="Close" />
                     </items>
                 </Menu>
-                <Menu mnemonicParsing="false" text="Edit">
+                <Menu mnemonicParsing="false" text="New">
                     <items>
-                        <MenuItem mnemonicParsing="false" text="Delete" />
+                        <MenuItem fx:id="newEmployee" mnemonicParsing="false" text="Employee" />
                     </items>
                 </Menu>
                 <Menu mnemonicParsing="false" text="Help">
@@ -38,13 +39,13 @@
         <!-- Upper Pane -->
         <Pane id="pane_up" layoutX="157.0" layoutY="24.0" prefHeight="54.0" prefWidth="520.0" style="-fx-border-color: gray;" AnchorPane.leftAnchor="157.0" AnchorPane.rightAnchor="-1.0" AnchorPane.topAnchor="24.0">
             <children>
-                <SplitMenuButton layoutX="80.0" layoutY="16.0" mnemonicParsing="false" text="SplitMenuButton">
+                <SplitMenuButton fx:id="location" layoutX="80.0" layoutY="16.0" mnemonicParsing="false" text="Locations">
                     <items>
                         <MenuItem mnemonicParsing="false" text="Action 1" />
                         <MenuItem mnemonicParsing="false" text="Action 2" />
                     </items>
                 </SplitMenuButton>
-                <SplitMenuButton layoutX="302.0" layoutY="16.0" mnemonicParsing="false" text="SplitMenuButton">
+                <SplitMenuButton layoutX="302.0" layoutY="16.0" mnemonicParsing="false" text="Schedule">
                     <items>
                         <MenuItem mnemonicParsing="false" text="Action 1" />
                         <MenuItem mnemonicParsing="false" text="Action 2" />

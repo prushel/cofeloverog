@@ -33,6 +33,10 @@ public class Client {
 
     }
 
+    public void CloseClient() throws IOException {
+        socket1.close();
+    }
+
     public Object sendMessage(String[] args) throws IOException, ClassNotFoundException {
 
         ObjectOutputStream oos = new ObjectOutputStream(socket1.getOutputStream());

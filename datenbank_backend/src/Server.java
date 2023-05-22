@@ -28,23 +28,21 @@ public class Server {
         while(true){
             System.out.println("Waiting for the client request");
             //creating socket and waiting for client conntion
-
             Socket socket = server.accept();
+
             //read from socket to ObjectInputStream object
             ObjectInputStream ois = new ObjectInputStream(socket.getInputStream());
             //convert ObjectInputStream object to String
-
-
             String[] message = (String[]) ois.readObject();
-
             String[] argument = Arrays.copyOfRange(message,1, message.length);
-            System.out.println(argument[0]);
-            System.out.println((argument[1]));
             Method command = Coordinator.class.getDeclaredMethod(message[0],argument.getClass());
-            System.out.println(command);
+            System.out.println("executing" + command);
             ObjectOutputStream oos = new ObjectOutputStream(socket.getOutputStream());
             Object answer = command.invoke(null, new Object[] {argument});
             oos.writeObject(answer);
+            System.out.println("Answer to Client: " + answer.toString());
+
+            socket.close(); //Close connection
 
 
 

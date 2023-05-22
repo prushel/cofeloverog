@@ -11,12 +11,17 @@ public class ClientController implements Initializable
 
     protected Client clientService;
 
-    @Override
-    public void initialize(URL url, ResourceBundle resourceBundle)
+    public ClientController ()
     {
         this.clientService = new Client();
         clientService.StartClient();
-        System.out.println("Client started");
+
+    }
+
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle)
+    {
+
 
 
     }

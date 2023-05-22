@@ -9,7 +9,7 @@
          <children>
             <TextField id="user" fx:id="user" />
             <Label text="User" />
-            <PasswordField id="password" fx:id="password" />
+            <PasswordField id="password" fx:id="password"/>
             <Label text="Password" />
             <Button id="login" fx:id="login" mnemonicParsing="false" onAction="#onLoginClick" text="Anmelden" />
             <Label />

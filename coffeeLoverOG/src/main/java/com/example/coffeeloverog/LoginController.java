@@ -21,6 +21,11 @@ public class LoginController extends ClientController
 
     @FXML private Label info;
 
+    @FXML
+    protected void onPasswordEnter() throws IOException, ClassNotFoundException {
+        this.onLoginClick();
+    }
+
 
     @FXML
     protected void onLoginClick() throws IOException, ClassNotFoundException {
@@ -30,9 +35,8 @@ public class LoginController extends ClientController
         var pw = this.password.getText();
         String[] creds = {"Login", login, pw};
 
-
-
         String answer = clientService.sendMessage(creds).toString();
+
 
         if(answer ==  "true") {
 

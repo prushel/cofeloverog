@@ -27,23 +27,7 @@ public class Database {
             conn = DriverManager.getConnection(host, user, password);
             System.out.println("Connection success!");
             conn.setAutoCommit(true);
-
-
-            PreparedStatement stmt =conn.prepareStatement("SELECT * FROM employee");
-            ResultSet rs = stmt.executeQuery();
-
-            while (rs.next())
-            {
-
-                System.out.println(rs.getString("first_name"));
-
-            }
-
             return true;
-
-
-
-
         } catch (PSQLException e) {
 
             return false;
