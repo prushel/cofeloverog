@@ -1,6 +1,8 @@
 package com.example.coffeeloverog;
 import Model.*;
 
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
@@ -26,6 +28,20 @@ public class CoffeeLoverController extends ClientController implements Initializ
 
 
     @FXML
+    protected void onSelectLocation() //load all schedules
+        {
+
+        }
+
+    @FXML
+    protected EventHandler<ActionEvent> onSelectSchedule(MenuItem men)
+    {
+
+
+        return null;
+    }
+
+    @FXML
     protected void onHelloButtonClick() {
         welcomeText.setText("Welcome to JavaFX Application!");
 
@@ -45,6 +61,7 @@ public class CoffeeLoverController extends ClientController implements Initializ
             // Obejekt dran machen loc.setUserDate()
             loc.setText("Location 1");
             loc.setId(String.valueOf(i));
+            loc.setOnAction(onSelectSchedule(loc));
             this.locationList.getItems().add(loc);
         }
 

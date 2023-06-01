@@ -33,6 +33,7 @@ public class Server {
             //read from socket to ObjectInputStream object
             ObjectInputStream ois = new ObjectInputStream(socket.getInputStream());
             //convert ObjectInputStream object to String
+
             String[] message = (String[]) ois.readObject();
             String[] argument = Arrays.copyOfRange(message,1, message.length);
             Method command = Coordinator.class.getDeclaredMethod(message[0],argument.getClass());
