@@ -49,6 +49,7 @@ public class CoffeeLoverController extends ClientController implements Initializ
 
 
 
+
     public void initialize(URL url, ResourceBundle resourceBundle) //hier passiert was vorher geladen werden muss
     {
 
@@ -69,4 +70,5 @@ public class CoffeeLoverController extends ClientController implements Initializ
 
 
     }
+
 }

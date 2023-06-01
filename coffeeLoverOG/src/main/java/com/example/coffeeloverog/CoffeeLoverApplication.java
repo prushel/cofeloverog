@@ -36,9 +36,8 @@ public class CoffeeLoverApplication extends Application {
         });
         stage.show();
         System.out.println("Program started...");
+
     }
-
-
 
     public static void main(String[] args) throws IOException, ClassNotFoundException, InterruptedException {
         launch();
