@@ -24,7 +24,7 @@ public class Server {
 
     //socket server port on which it will listen
     private static int port = 9876;
-    private static Database db;
+    protected static Socket socket;
 
     public static void main(String args[]) throws IOException, ClassNotFoundException, NoSuchMethodException, InvocationTargetException, IllegalAccessException {
         //create the socket server object
@@ -33,29 +33,46 @@ public class Server {
         //creating socket and waiting for client connection
 
         //keep listens indefinitely until receives 'exit' call or program terminates
-        while(true){
+        String[] argument;
+        String[] message;
+        while (true) {
             //read from socket to ObjectInputStream object
-            Socket socket = server.accept();
+            socket = server.accept();
             ObjectInputStream ois = null;
+            ois = new ObjectInputStream(socket.getInputStream());
+            //convert ObjectInputStream object to String
+            message = (String[]) ois.readObject();
+            argument = null;
+            try {
+                argument = Arrays.copyOfRange(message, 1, message.length);
+                System.out.println(argument[0]);
 
-                    ois = new ObjectInputStream(socket.getInputStream());
-                    //convert ObjectInputStream object to String
-                    String[] message = (String[]) ois.readObject();
-                    String[] argument = Arrays.copyOfRange(message, 1, message.length);
-                    Method command = Coordinator.class.getDeclaredMethod(message[0], argument.getClass());
-                    System.out.println("executing" + command);
-                    ObjectOutputStream oos = new ObjectOutputStream(socket.getOutputStream());
-                    Object answer = command.invoke(null, new Object[]{argument});
-                    oos.writeObject(answer);
-                    System.out.println("Answer to Client: " + answer.toString());
-                    oos.close();
-
+            } catch (Exception e) {
+                System.out.println("No array");
+                argument = null;
             }
+            finally //decide which method to execute;
+            {
+                if(argument == null){
+                Method command = Coordinator.class.getDeclaredMethod(message[0]);
+                command.invoke(null);
+                }
+                else{
+                    Method command = Coordinator.class.getDeclaredMethod(message[0], argument.getClass());
+                    command.invoke(null, new Object[]{argument});
+                }
+        }
 
 
 
 
-            //terminate the server if client sends exit request
+
+    }
+
+
+
+
+
 
         }
 

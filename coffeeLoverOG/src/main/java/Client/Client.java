@@ -1,4 +1,5 @@
 package Client;
+
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
@@ -37,7 +38,6 @@ public class Client {
     public void CloseClient() throws IOException {
         socket1.close();
     }
-
     public Object sendMessage(String[] args) throws IOException, ClassNotFoundException {
 
         ObjectOutputStream oos = new ObjectOutputStream(socket1.getOutputStream());
@@ -46,6 +46,20 @@ public class Client {
         Object answer = ois.readObject();
         return answer;
 
+
+
     }
+    public void getSchedules() throws IOException, ClassNotFoundException
+    {
+        String[] args = {"getSchedule"};
+
+
+        this.sendMessage(args);
+
+
+    }
+
+   
+
 
 }

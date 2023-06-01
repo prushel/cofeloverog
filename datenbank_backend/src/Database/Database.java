@@ -13,7 +13,7 @@ public class Database {
     private static String user = null;
     private static String password = null;
 
-    protected static Connection conn = null;
+    public static Connection conn = null;
 
 
     public boolean connect(String User, String Password)

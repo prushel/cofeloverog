@@ -1,5 +1,5 @@
 package com.example.coffeeloverog;
-import Model.*;
+import Models.*;
 
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -7,6 +7,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
@@ -55,18 +56,16 @@ public class CoffeeLoverController extends ClientController implements Initializ
     public void initialize(URL url, ResourceBundle resourceBundle) //hier passiert was vorher geladen werden muss
     {
 
-
+        try {
+            clientService.getSchedules();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        } catch (ClassNotFoundException e) {
+            throw new RuntimeException(e);
+        }
         System.out.println(("Prepreations have been made"));
         // e.g add locations and schedules to the list
-        for(int i =0;i<5;i++) {
 
-            MenuItem loc = new MenuItem();
-            // Obejekt dran machen loc.setUserDate()
-            loc.setText("Location 1");
-            loc.setId(String.valueOf(i));
-
-
-        }
 
 
 

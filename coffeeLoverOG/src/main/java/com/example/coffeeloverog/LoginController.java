@@ -35,15 +35,17 @@ public class LoginController extends ClientController
         var pw = this.password.getText();
         String[] creds = {"Login", login, pw};
 
-        String answer = clientService.sendMessage(creds).toString();
+        Object answer = clientService.sendMessage(creds);
+        String b = answer.toString();
 
-        if(answer ==  "true") {
+
+        if(b ==  "true") {
 
             System.out.println("Logged in as" + login);
             GUIControl.loadNewScene("CoffeeView.fxml");
 
         }
-        else if(answer == "false") {
+        else if(b == "false") {
             System.out.println("Could not verify");
             info.setText("Could not verify user " + login);
 
