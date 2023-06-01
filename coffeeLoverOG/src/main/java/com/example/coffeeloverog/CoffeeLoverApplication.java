@@ -21,7 +21,6 @@ public class CoffeeLoverApplication extends Application {
     public void start(Stage primaryStage) throws IOException, ClassNotFoundException, InterruptedException {
 
         //Login Bildschirm laden
-
         FXMLLoader fxmlLoader =  new FXMLLoader();
         Parent root = fxmlLoader.load(CoffeeLoverApplication.class.getResource("Login.fxml"));
         this.stage = primaryStage;
