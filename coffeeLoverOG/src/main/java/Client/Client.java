@@ -1,11 +1,14 @@
 package Client;
 
+import Models.Schedule;
+
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.net.InetAddress;
 import java.net.Socket;
 import java.net.UnknownHostException;
+import java.util.ArrayList;
 
 /**
  * This class implements java socket client
@@ -43,23 +46,25 @@ public class Client {
         ObjectOutputStream oos = new ObjectOutputStream(socket1.getOutputStream());
         oos.writeObject(args);
         var ois = new ObjectInputStream(socket1.getInputStream());
-        Object answer = ois.readObject();
-        return answer;
+         return ois.readObject();
+
 
 
 
     }
-    public void getSchedules() throws IOException, ClassNotFoundException
+    public ArrayList<Schedule> getSchedules() throws IOException, ClassNotFoundException
     {
         String[] args = {"getSchedule"};
+        Object answer = this.sendMessage(args);
+        ArrayList<Schedule> schedules = new ArrayList<>();
+        schedules = (ArrayList<Schedule>) answer;
 
-
-        this.sendMessage(args);
+        return schedules;
 
 
     }
 
-   
+
 
 
 }

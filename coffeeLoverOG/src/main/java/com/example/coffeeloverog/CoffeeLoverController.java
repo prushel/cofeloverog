@@ -15,7 +15,7 @@ import java.util.ResourceBundle;
 public class CoffeeLoverController extends ClientController implements Initializable  {
 
     ArrayList<Location> locations;
-    ArrayList<Schedule> schedules;
+
 
 
     @FXML
@@ -24,8 +24,10 @@ public class CoffeeLoverController extends ClientController implements Initializ
 
     @FXML
     private SplitMenuButton locationList;
-
+    @FXML
     private SplitMenuButton scheduleList;
+
+    private ArrayList<Schedule> schedules;
 
 
     @FXML
@@ -38,8 +40,6 @@ public class CoffeeLoverController extends ClientController implements Initializ
     {
 
         System.out.println("Something happend");
-
-
 
         return null;
     }
@@ -56,16 +56,20 @@ public class CoffeeLoverController extends ClientController implements Initializ
     public void initialize(URL url, ResourceBundle resourceBundle) //hier passiert was vorher geladen werden muss
     {
 
+
+        System.out.println(("Prepreations have been made"));
         try {
-            clientService.getSchedules();
+            this.schedules = clientService.getSchedules();
         } catch (IOException e) {
             throw new RuntimeException(e);
         } catch (ClassNotFoundException e) {
             throw new RuntimeException(e);
         }
-        System.out.println(("Prepreations have been made"));
-        // e.g add locations and schedules to the list
-
+        for(int i = 0;i<schedules.size();i++){
+            MenuItem men = new MenuItem();
+            men.setText("1");
+            scheduleList.getItems().add(men);
+        }
 
 
 

@@ -42,13 +42,13 @@
         <!-- Upper Pane -->
         <Pane id="pane_up" layoutX="157.0" layoutY="24.0" prefHeight="54.0" prefWidth="520.0" style="-fx-border-color: gray;" AnchorPane.leftAnchor="157.0" AnchorPane.rightAnchor="-1.0" AnchorPane.topAnchor="24.0">
             <children>
-                <SplitMenuButton fx:id="location" layoutX="80.0" layoutY="16.0" mnemonicParsing="false" text="Locations">
+                <SplitMenuButton fx:id="locationList" layoutX="80.0" layoutY="16.0" mnemonicParsing="false" text="Locations">
                     <items>
                         <MenuItem mnemonicParsing="false" text="Action 1" />
                         <MenuItem mnemonicParsing="false" text="Action 2" />
                     </items>
                 </SplitMenuButton>
-                <SplitMenuButton layoutX="302.0" layoutY="16.0" mnemonicParsing="false" text="Schedule">
+                <SplitMenuButton fx:id="scheduleList" layoutX="302.0" layoutY="16.0" mnemonicParsing="false" text="Schedule">
                     <items>
                         <MenuItem mnemonicParsing="false" text="Action 1" />
                         <MenuItem mnemonicParsing="false" text="Action 2" />
