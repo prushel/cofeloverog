@@ -1,5 +1,6 @@
 package com.example.coffeeloverog;
 
+import Client.Client;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -9,11 +10,14 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
-public class CoffeeLoverApplication extends Application {
+public class CoffeeLoverApplication extends Application   {
 
 
     protected static Stage stage;
     protected static Scene scene;
+
+    public Client client;
+
 
     protected MenuItem newEmployee;
 
@@ -25,15 +29,13 @@ public class CoffeeLoverApplication extends Application {
         Parent root = fxmlLoader.load(CoffeeLoverApplication.class.getResource("Login.fxml"));
         this.stage = primaryStage;
         this.scene = new Scene(root);
+
+
         stage.setTitle("Coffee Lover OG!");
         /*GridPane pane_L = new GridPane();
         StackPane pane = new StackPane();
-        pane.getChildren().add(pane_L); */
+        pane.getChildren().add(pane_    L); */
         stage.setScene(scene);
-        stage.setOnCloseRequest(event ->
-        {
-            System.out.println("Closing");
-        });
         stage.show();
         System.out.println("Program started...");
 

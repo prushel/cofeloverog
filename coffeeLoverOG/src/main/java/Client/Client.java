@@ -27,6 +27,7 @@ public class Client {
         }
         catch(IOException e) {
             System.out.println("Verbindung zum Server nicht möglich");
+
         }
 
 

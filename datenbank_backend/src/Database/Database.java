@@ -10,10 +10,10 @@ import java.sql.ResultSet;
 public class Database {
 
     private String host = "jdbc:postgresql://katharina.camdvr.org:302/cofedb";
-    private String user = null;
-    private String password = null;
+    private static String user = null;
+    private static String password = null;
 
-    protected Connection conn = null;
+    protected static Connection conn = null;
 
 
     public boolean connect(String User, String Password)

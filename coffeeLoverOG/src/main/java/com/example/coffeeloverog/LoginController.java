@@ -1,5 +1,6 @@
 package com.example.coffeeloverog;
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
@@ -26,7 +27,6 @@ public class LoginController extends ClientController
         this.onLoginClick();
     }
 
-
     @FXML
     protected void onLoginClick() throws IOException, ClassNotFoundException {
 
@@ -36,7 +36,6 @@ public class LoginController extends ClientController
         String[] creds = {"Login", login, pw};
 
         String answer = clientService.sendMessage(creds).toString();
-
 
         if(answer ==  "true") {
 

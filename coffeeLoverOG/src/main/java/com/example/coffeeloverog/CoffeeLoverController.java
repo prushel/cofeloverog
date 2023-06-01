@@ -32,10 +32,12 @@ public class CoffeeLoverController extends ClientController implements Initializ
         {
 
         }
-
     @FXML
-    protected EventHandler<ActionEvent> onSelectSchedule(MenuItem men)
+    protected EventHandler<ActionEvent> onSelectSchedule()
     {
+
+        System.out.println("Something happend");
+
 
 
         return null;
@@ -62,8 +64,8 @@ public class CoffeeLoverController extends ClientController implements Initializ
             // Obejekt dran machen loc.setUserDate()
             loc.setText("Location 1");
             loc.setId(String.valueOf(i));
-            loc.setOnAction(onSelectSchedule(loc));
-            this.locationList.getItems().add(loc);
+
+
         }
 
 
