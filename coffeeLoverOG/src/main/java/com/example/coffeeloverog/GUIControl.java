@@ -1,4 +1,4 @@
-package com.example.coffeeloverog;
+package com.example.CofeLoverApplication;
 
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
