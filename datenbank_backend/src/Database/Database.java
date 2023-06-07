@@ -1,24 +1,19 @@
 package Database;//Java SQL
 import org.postgresql.util.PSQLException;
-
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-
-public class Database {
+public  class Database {
 
     private String host = "jdbc:postgresql://katharina.camdvr.org:302/cofedb";
-    private static String user = null;
-    private static String password = null;
+    private  String user = null;
+    private  String password = null;
 
-    public static Connection conn = null;
-
-
+    protected static Connection conn = null;
     public boolean connect(String User, String Password)
     {
-
         this.user = User;
         this.password = Password;
 
@@ -41,6 +36,6 @@ public class Database {
 
     public void closeConnection() throws SQLException {
         conn.close();
-        System.out.println("Connection terminated");
+        System.out.println("DBConnection terminated");
     }
 }

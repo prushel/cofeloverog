@@ -20,11 +20,9 @@ public class ScheduleService
 
         while (sc.next());
         {
-
             Schedule s = new Schedule(1);
             System.out.println(s.ID());
             schedules.add(s);
-
 
         }
         return schedules;

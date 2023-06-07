@@ -16,6 +16,7 @@ public class ClientController implements Initializable
         this.clientService = new Client();
         clientService.StartClient();
 
+
     }
 
     @Override

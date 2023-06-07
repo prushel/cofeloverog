@@ -3,13 +3,13 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane prefHeight="330.0" prefWidth="437.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.coffeeloverog.LoginController">
+<AnchorPane prefHeight="451.0" prefWidth="607.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.coffeeloverog.LoginController">
    <children>
       <VBox layoutX="102.0" layoutY="57.0" prefHeight="217.0" prefWidth="234.0">
          <children>
             <TextField id="user" fx:id="user" />
             <Label text="User" />
-            <PasswordField id="password" fx:id="password"/>
+            <PasswordField id="password" fx:id="password" />
             <Label text="Password" />
             <Button id="login" fx:id="login" mnemonicParsing="false" onAction="#onLoginClick" text="Anmelden" />
             <Label />

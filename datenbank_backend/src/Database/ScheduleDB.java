@@ -10,6 +10,14 @@ public class ScheduleDB extends Database
         PreparedStatement stmt = conn.prepareStatement("SELECT * FROM schedule");
         ResultSet rs = stmt.executeQuery();
         return rs;
-
     }
+
+    public ResultSet getScheduleShifts() throws SQLException {
+        PreparedStatement stmt = conn.prepareStatement("SELECT * FROM shift where schedule_id");
+        ResultSet rs = stmt.executeQuery();
+
+        return rs;
+    }
+
+  
 }

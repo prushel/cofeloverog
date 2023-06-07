@@ -10,8 +10,6 @@ import java.io.IOException;
 
 public class LoginController extends ClientController
 {
-
-
     @FXML
     private TextField user;
     @FXML
@@ -26,7 +24,6 @@ public class LoginController extends ClientController
     protected void onPasswordEnter() throws IOException, ClassNotFoundException {
         this.onLoginClick();
     }
-
     @FXML
     protected void onLoginClick() throws IOException, ClassNotFoundException {
 
@@ -43,7 +40,6 @@ public class LoginController extends ClientController
 
             System.out.println("Logged in as" + login);
             GUIControl.loadNewScene("CoffeeView.fxml");
-
         }
         else if(b == "false") {
             System.out.println("Could not verify");
@@ -53,7 +49,7 @@ public class LoginController extends ClientController
         }
 
 
-        }
+    }
 
 
 

@@ -23,9 +23,12 @@ public class Client {
         //get the localhost IP address, if server is running on some other IP, you need to use that
 
         InetAddress host = null;
+
         try {
             host = InetAddress.getLocalHost();
             this.socket1 = new Socket(host.getHostName(), 9876);
+            System.out.println("Verbindung zum Server erfolgreich");
+            System.out.println("_________________");
         } catch (UnknownHostException e) {
             throw new RuntimeException(e);
         }

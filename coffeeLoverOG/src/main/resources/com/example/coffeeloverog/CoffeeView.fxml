@@ -4,14 +4,12 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-
-
-<AnchorPane id="anchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="393.0" prefWidth="678.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.coffeeloverog.CoffeeLoverController">
+<AnchorPane id="anchorPane" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.coffeeloverog.CoffeeLoverController">
 
 
     <children>
         <!--- Menu Top -->
-        <MenuBar prefHeight="25.0" prefWidth="816.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <MenuBar prefHeight="25.0" prefWidth="678.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
             <menus>
                 <Menu mnemonicParsing="false" text="File">
                     <items>
@@ -20,7 +18,7 @@
                 </Menu>
                 <Menu mnemonicParsing="false" text="New">
                     <items>
-                        <MenuItem fx:id="newEmployee" mnemonicParsing="false" text="Employee" />
+                        <MenuItem fx:id="newEmployee" mnemonicParsing="false" onAction="#newEmployee" text="Employee" />
                     </items>
                 </Menu>
                 <Menu mnemonicParsing="false" text="Help">
@@ -40,7 +38,7 @@
         <Pane id="pane_L" layoutY="25.0" prefHeight="376.0" prefWidth="158.0" style="-fx-border-color: gray;" AnchorPane.bottomAnchor="-1.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="24.0" />
         <!-- Side Pane Left End -->
         <!-- Upper Pane -->
-        <Pane id="pane_up" layoutX="157.0" layoutY="24.0" prefHeight="54.0" prefWidth="520.0" style="-fx-border-color: gray;" AnchorPane.leftAnchor="157.0" AnchorPane.rightAnchor="-1.0" AnchorPane.topAnchor="24.0">
+        <Pane id="pane_up" layoutX="157.0" layoutY="7.0" prefHeight="71.0" prefWidth="554.0" style="-fx-border-color: gray;" AnchorPane.leftAnchor="157.0" AnchorPane.rightAnchor="-33.0" AnchorPane.topAnchor="24.0">
             <children>
                 <SplitMenuButton fx:id="locationList" layoutX="80.0" layoutY="16.0" mnemonicParsing="false" text="Locations">
                     <items>
@@ -56,7 +54,7 @@
                 </SplitMenuButton>
             </children>
         </Pane>
-      <ScrollPane layoutX="158.0" layoutY="78.0" prefHeight="629.0" prefWidth="778.0">
+      <ScrollPane layoutX="158.0" layoutY="94.0" prefHeight="354.0" prefWidth="689.0">
         <content>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="1200.0" prefWidth="121.0">
                <children>

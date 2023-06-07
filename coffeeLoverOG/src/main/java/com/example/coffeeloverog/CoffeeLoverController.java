@@ -15,19 +15,19 @@ import java.util.ResourceBundle;
 public class CoffeeLoverController extends ClientController implements Initializable  {
 
     ArrayList<Location> locations;
-
-
+    private ArrayList<Schedule> schedules;
 
     @FXML
     private Label welcomeText;
 
+    private MenuItem addEmployee;
 
     @FXML
     private SplitMenuButton locationList;
     @FXML
     private SplitMenuButton scheduleList;
 
-    private ArrayList<Schedule> schedules;
+
 
 
     @FXML
@@ -39,7 +39,6 @@ public class CoffeeLoverController extends ClientController implements Initializ
     protected EventHandler<ActionEvent> onSelectSchedule()
     {
 
-        System.out.println("Something happend");
 
         return null;
     }
@@ -49,14 +48,17 @@ public class CoffeeLoverController extends ClientController implements Initializ
         welcomeText.setText("Welcome to JavaFX Application!");
 
     }
+    @FXML
+    protected void newEmployee() throws IOException {
+        GUIControl.showEmployeeView(1);
+
+    }
 
 
 
 
     public void initialize(URL url, ResourceBundle resourceBundle) //hier passiert was vorher geladen werden muss
     {
-
-
         System.out.println(("Prepreations have been made"));
         try {
             this.schedules = clientService.getSchedules();
@@ -67,13 +69,20 @@ public class CoffeeLoverController extends ClientController implements Initializ
         }
         for(int i = 0;i<schedules.size();i++){
             MenuItem men = new MenuItem();
-            men.setText("1");
+            Schedule schedule = schedules.get(i);
+            men.setText("Nr: " + schedule.ID());
             scheduleList.getItems().add(men);
+            men.setUserData(schedules.get(i)); //bind Schedule Object to Menu Item
+
+
+            System.out.println("Schedule: " + schedules.get(i).ID() + " added");
         }
 
 
 
 
     }
+
+
 
 }

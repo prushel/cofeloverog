@@ -29,20 +29,19 @@ public class CoffeeLoverApplication extends Application   {
         Parent root = fxmlLoader.load(CoffeeLoverApplication.class.getResource("Login.fxml"));
         this.stage = primaryStage;
         this.scene = new Scene(root);
-
-
         stage.setTitle("Coffee Lover OG!");
         /*GridPane pane_L = new GridPane();
         StackPane pane = new StackPane();
         pane.getChildren().add(pane_    L); */
         stage.setScene(scene);
         stage.show();
-        System.out.println("Program started...");
+
 
     }
 
     public static void main(String[] args) throws IOException, ClassNotFoundException, InterruptedException {
         launch();
+        System.out.println("Programme launched successfully");
 
     }
 }

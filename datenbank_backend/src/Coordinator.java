@@ -9,43 +9,36 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Coordinator extends ServerMain
+ class Coordinator extends Server
 {
-
-    protected ArrayList<Employee> employees = new ArrayList<>();
-
 
     protected static void getSchedule() throws IOException, SQLException, ClassNotFoundException {
 
         ScheduleService sc = new ScheduleService();
-        ObjectOutputStream oos = new ObjectOutputStream(Server.socket.getOutputStream());
-        Object answer = sc.getSchedules();
-        oos.writeObject(answer);
-        System.out.println("Answer to Client: " + answer);
-        oos.close();
-
+        ArrayList<Schedule> answer = sc.getSchedules();
+        Server.Answer(answer);
 
     }
-
 
     protected static void createEmployee()
     {
-        Employee employee = new Employee();
-       ;
-
+        EmployeeService es = new EmployeeService();
+      
     }
-
 
     protected static void Login(String[] creds) throws IOException {
         Object answer = Security.verify(creds[0], creds[1]);
         System.out.println(creds[0]);
         System.out.println(creds[1]);
-        ObjectOutputStream oos = new ObjectOutputStream(Server.socket.getOutputStream());
-        oos.writeObject(answer);
-        System.out.println("Answer to Client: " + answer);
-        oos.close();
+        Server.Answer(answer);
 
     }
+    protected static void fetchScheduleShifts(Schedule scheudle)
+    {
+        ScheduleService sch = new ScheduleService();
+        sch.getShifts(scheudle.ID());
+    }
+
 
 
 

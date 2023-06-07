@@ -25,9 +25,20 @@ public class GUIControl extends CoffeeLoverApplication
         Parent root = fxmlLoader.load(CoffeeLoverApplication.class.getResource(resource));
         Scene SecondScene = new Scene(root);
         secondaryStage.setScene(SecondScene);
+        secondaryStage.show();
 
 
 
+    }
+    public static void showEmployeeView(int i) throws IOException {
+        Stage secondaryStage = new Stage();
+        FXMLLoader fxmlLoader = new FXMLLoader();
+        EmployeeViewController evc = new EmployeeViewController(1);
+        fxmlLoader.setController(evc);
+        Parent root = fxmlLoader.load(CoffeeLoverApplication.class.getResource("EmployeeView.fxml"));
+        Scene SecondScene = new Scene(root);
+        secondaryStage.setScene(SecondScene);
+        secondaryStage.show();
 
     }
 
