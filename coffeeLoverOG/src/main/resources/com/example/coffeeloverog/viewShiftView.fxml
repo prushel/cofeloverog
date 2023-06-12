@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="467.0" prefWidth="701.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="viewShiftController">
+   <children>
+      <DatePicker fx:id="dtShiftDate" layoutX="24.0" layoutY="41.0" prefHeight="29.0" prefWidth="160.0" />
+      <Accordion layoutX="24.0" layoutY="113.0" />
+    <TitledPane animated="false" layoutX="24.0" layoutY="113.0" prefHeight="314.0" prefWidth="523.0" text="Shift">
+      <content>
+        <AnchorPane fx:id="apShiftAnchorPane" minHeight="0.0" minWidth="0.0" prefHeight="233.0" prefWidth="431.0">
+               <children>
+                  <Label fx:id="day" layoutX="80.0" layoutY="20.0" prefHeight="25.0" prefWidth="59.0" text="Day" />
+                  <Label fx:id="month" layoutX="7.0" layoutY="20.0" prefHeight="25.0" prefWidth="59.0" text="Month" />
+                  <CheckBox fx:id="check" layoutX="184.0" layoutY="24.0" mnemonicParsing="false" prefHeight="18.0" prefWidth="18.0" />
+                  <Label fx:id="shift" layoutX="139.0" layoutY="24.0" text="Shift" />
+               </children></AnchorPane>
+      </content>
+    </TitledPane>
+      <Button layoutX="197.0" layoutY="43.0" mnemonicParsing="false" onAction="#show" text="Show" />
+   </children>
+</Pane>
