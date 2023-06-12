@@ -7,7 +7,7 @@ public class EmployeeService
     public int createEmployee(Employee newEmployee)
         {
             EmployeeDB edb = new EmployeeDB();
-            return edb.createEmployee()
+            return 1;
 
         }
 

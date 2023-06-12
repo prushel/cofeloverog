@@ -3,6 +3,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
+
 <AnchorPane id="anchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="393.0" prefWidth="678.0" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.coffeeloverog.CoffeeLoverController">
     <children>
         <!--- Menu Top -->
@@ -35,7 +36,7 @@
         <Pane id="pane_L" layoutY="25.0" prefHeight="376.0" prefWidth="158.0" style="-fx-border-color: gray;" AnchorPane.bottomAnchor="-1.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="24.0" />
         <!-- Side Pane Left End -->
         <!-- Upper Pane -->
-        <Pane id="pane_up" layoutX="157.0" layoutY="7.0" prefHeight="71.0" prefWidth="554.0" style="-fx-border-color: gray;" AnchorPane.leftAnchor="157.0" AnchorPane.rightAnchor="-33.0" AnchorPane.topAnchor="24.0">
+        <Pane id="pane_up" layoutX="157.0" layoutY="7.0" prefHeight="55.0" prefWidth="522.0" style="-fx-border-color: gray;" AnchorPane.leftAnchor="157.0" AnchorPane.rightAnchor="-1.0" AnchorPane.topAnchor="24.0">
             <children>
                 <SplitMenuButton fx:id="locationList" layoutX="80.0" layoutY="16.0" mnemonicParsing="false" text="Locations">
                     <items>
@@ -56,9 +57,9 @@
         <content>
           <AnchorPane minHeight="0.0" minWidth="0.0">
                <children>
-                  <Pane prefHeight="120.0" prefWidth="120.0" style="-fx-background-color: DARKBLUE; -fx-border-color: white;">
+                  <Pane id="d_Pane1" prefHeight="120.0" prefWidth="120.0" style="-fx-background-color: DARKBLUE; -fx-border-color: white;">
                      <children>
-                        <Text fill="WHITE" layoutX="11.0" layoutY="58.0" strokeType="INSIDE" strokeWidth="0.0" text="01.01." textAlignment="CENTER">
+                        <Text id="date1" fx:id="date1" fill="WHITE" layoutX="11.0" layoutY="58.0" strokeType="INSIDE" strokeWidth="0.0" text="01.01." textAlignment="CENTER">
                            <font>
                               <Font name="Arial Bold" size="35.0" />
                            </font>
@@ -70,7 +71,7 @@
                         </Text>
                      </children>
                   </Pane>
-                  <Pane layoutY="120.0" prefHeight="120.0" prefWidth="120.0" style="-fx-background-color: DARKBLUE; -fx-border-color: white;">
+                  <Pane fx:id="d_Pane1" layoutY="120.0" prefHeight="120.0" prefWidth="120.0" style="-fx-background-color: DARKBLUE; -fx-border-color: white;">
                      <children>
                         <Text fill="WHITE" layoutX="11.0" layoutY="58.0" strokeType="INSIDE" strokeWidth="0.0" text="02.01." textAlignment="CENTER">
                            <font>

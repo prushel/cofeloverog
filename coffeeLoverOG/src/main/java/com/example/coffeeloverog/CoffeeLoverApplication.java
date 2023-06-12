@@ -24,7 +24,7 @@ public class CoffeeLoverApplication extends Application   {
         FXMLLoader fxmlLoader =  new FXMLLoader();
         Parent root = fxmlLoader.load(CoffeeLoverApplication.class.getResource("Login.fxml"));
         this.stage = primaryStage;
-        this.scene = new Scene(root);
+        this.scene = new Scene(root, 1200, 800);
         stage.setTitle("Coffee Lover OG!");
         /*GridPane pane_L = new GridPane();
         StackPane pane = new StackPane();

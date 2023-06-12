@@ -116,13 +116,13 @@ public class Server {
         int method = (int) message[0];
         if(message.length == 1)
         {
-            methodsInfo.get(method).invoke(null);
+            methods.get(method).invoke(null);
         }
         else
         {
             Object[] arguments;
             arguments = Arrays.copyOfRange(message, 1, message.length);
-            methodsInfo.get(method).invoke(null, arguments);
+            methods.get(method).invoke(null, arguments);
         }
     }
 

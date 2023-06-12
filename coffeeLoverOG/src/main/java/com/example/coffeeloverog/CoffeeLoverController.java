@@ -5,8 +5,16 @@ import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
+import javafx.scene.layout.Pane;
+import javafx.scene.text.Text;
+import javafx.util.StringConverter;
+
+
 import java.io.IOException;
 import java.net.URL;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
 
@@ -70,14 +78,21 @@ public class CoffeeLoverController extends ClientController implements Initializ
             men.setUserData(schedules.get(i)); //bind Schedule Object to Menu Item
             System.out.println("Schedule: " + schedules.get(i).ID() + " added");
         }
-
-
-
-
-
-
     }
 
+    @FXML
+    protected Text date1;
+    protected Pane d_Pane1;
+    @FXML
+    protected void LocalDateTime() {
+        // Create the DatePicker.
+        DatePicker datePicker = new DatePicker();
 
+        // Add some action (in Java 8 lambda syntax style).
+        datePicker.setOnAction(event -> {
+            LocalDate date = datePicker.getValue();
+            System.out.println("Selected date: " + date);
+        });
 
+    }
 }
