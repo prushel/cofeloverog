@@ -9,8 +9,12 @@ import java.lang.reflect.Method;
 import java.net.ServerSocket;
 import java.net.Socket;
 import java.net.SocketException;
-import java.sql.Connection;
+import java.sql.SQLException;
 import java.util.Arrays;
+import java.util.Dictionary;
+import java.util.HashMap;
+import java.util.Map;
+
 import Database.Database;
 
 /**
@@ -19,6 +23,9 @@ import Database.Database;
  *
  */
 public class Server {
+
+   HashMap<Integer, Method> methods = new HashMap<>();
+
 
     //static ServerSocket variable
     private static ServerSocket server = null;
@@ -48,6 +55,11 @@ public class Server {
                 socket.shutdownInput();
                 socket.shutdownOutput();
                 socket.close();
+                try {
+                    Database.closeConnection();
+                } catch (SQLException ex) {
+                    throw new RuntimeException(ex);
+                }
                 socket = null;
 
             }
@@ -93,6 +105,25 @@ public class Server {
         }
 
 
+    }
+
+    private void getMessage() throws IOException, ClassNotFoundException, InvocationTargetException, IllegalAccessException {
+        Object[] message;
+        ObjectInputStream ois = null;
+        ois = new ObjectInputStream(socket.getInputStream());
+        //convert ObjectInputStream object to String
+        message = (Object[]) ois.readObject();
+        int method = (int) message[0];
+        if(message.length == 1)
+        {
+            methodsInfo.get(method).invoke(null);
+        }
+        else
+        {
+            Object[] arguments;
+            arguments = Arrays.copyOfRange(message, 1, message.length);
+            methodsInfo.get(method).invoke(null, arguments);
+        }
     }
 
 

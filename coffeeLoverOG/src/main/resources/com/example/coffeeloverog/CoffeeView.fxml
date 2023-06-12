@@ -3,14 +3,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
-
-<<<<<<< HEAD
-<AnchorPane id="anchorPane" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.CofeLoverApplication.CoffeeLoverController">
-
-
-=======
-<AnchorPane id="anchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="393.0" prefWidth="678.0" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.CofeLoverApplication.CoffeeLoverController">
->>>>>>> 78a924827b6f329eff8d9cc47a6e0f73244be00b
+<AnchorPane id="anchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="393.0" prefWidth="678.0" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.coffeeloverog.CoffeeLoverController">
     <children>
         <!--- Menu Top -->
         <MenuBar prefHeight="25.0" prefWidth="678.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
@@ -58,11 +51,8 @@
                 </SplitMenuButton>
             </children>
         </Pane>
-<<<<<<< HEAD
-      <ScrollPane layoutX="158.0" layoutY="94.0" prefHeight="354.0" prefWidth="689.0">
-=======
+
       <ScrollPane layoutX="158.0" layoutY="78.0" prefHeight="315.0" prefWidth="522.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="156.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="78.0">
->>>>>>> 78a924827b6f329eff8d9cc47a6e0f73244be00b
         <content>
           <AnchorPane minHeight="0.0" minWidth="0.0">
                <children>

@@ -1,12 +1,10 @@
 package com.example.coffeeloverog;
 import Models.*;
-
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
-
 import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
@@ -53,13 +51,10 @@ public class CoffeeLoverController extends ClientController implements Initializ
         GUIControl.showEmployeeView(1);
 
     }
-
-
-
-
     public void initialize(URL url, ResourceBundle resourceBundle) //hier passiert was vorher geladen werden muss
     {
         System.out.println(("Prepreations have been made"));
+
         try {
             this.schedules = clientService.getSchedules();
         } catch (IOException e) {
@@ -70,13 +65,13 @@ public class CoffeeLoverController extends ClientController implements Initializ
         for(int i = 0;i<schedules.size();i++){
             MenuItem men = new MenuItem();
             Schedule schedule = schedules.get(i);
-            men.setText("Nr: " + schedule.ID());
+            men.setText("Nr: " + schedule.ID() + " " + schedule.getFrom() + " - " + schedule.getTo());
             scheduleList.getItems().add(men);
             men.setUserData(schedules.get(i)); //bind Schedule Object to Menu Item
-
-
             System.out.println("Schedule: " + schedules.get(i).ID() + " added");
         }
+
+
 
 
 

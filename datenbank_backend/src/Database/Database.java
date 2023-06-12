@@ -34,7 +34,7 @@ public  class Database {
 
     }
 
-    public void closeConnection() throws SQLException {
+    public static void closeConnection() throws SQLException {
         conn.close();
         System.out.println("DBConnection terminated");
     }

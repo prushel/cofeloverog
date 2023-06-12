@@ -16,10 +16,6 @@ public class CoffeeLoverApplication extends Application   {
     protected static Stage stage;
     protected static Scene scene;
 
-    public Client client;
-
-
-    protected MenuItem newEmployee;
 
     @Override
     public void start(Stage primaryStage) throws IOException, ClassNotFoundException, InterruptedException {

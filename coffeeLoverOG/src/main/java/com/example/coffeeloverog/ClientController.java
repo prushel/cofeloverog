@@ -1,4 +1,4 @@
-package com.example.CofeLoverApplication;
+package com.example.coffeeloverog;
 import Client.Client;
 import javafx.fxml.Initializable;
 

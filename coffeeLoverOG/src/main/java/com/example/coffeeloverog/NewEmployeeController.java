@@ -27,12 +27,8 @@ public class NewEmployeeController extends ClientController
     protected void createEmployee() throws IOException, ClassNotFoundException {
             String[] i = new String[]{"createEmployee", this.first_name.getText(), this.last_name.getText(), String.valueOf(this.dob),
                     String.valueOf(this.doe), this.hours_week.getText()};
-
-
-
-            if((int) clientService.sendMessage(i) == 1){
-                GUIControl.showEmployeeView(1);
-            }
+            int newEmployee = (int) clientService.sendMessage(i);
+            GUIControl.showEmployeeView(newEmployee);
 
         }
 }

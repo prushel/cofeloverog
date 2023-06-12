@@ -4,12 +4,10 @@ import Database.EmployeeDB;
 
 public class EmployeeService
 {
-    public Employee createEmployee(Employee newEmployee)
+    public int createEmployee(Employee newEmployee)
         {
             EmployeeDB edb = new EmployeeDB();
-            return newEmployee;
-
-
+            return edb.createEmployee()
 
         }
 
@@ -23,6 +21,7 @@ public class EmployeeService
     return 0;
 
 }
+
 
 
 
